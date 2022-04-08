@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
 
 	anotateButton.addEventListener('click', () => {
 		var textINPUT = document.getElementById('input_text').value;
-		var textINPUT = textINPUT.replaceAll('大阪府','<b><a href="http://www.wikidata.org/entity/Q122723" target="kg">大阪府</a></b>');
+		var textINPUT = textINPUT.replaceAll('大阪府','<b><a href="https://www.wikidata.org/entity/Q122723" target="kg">大阪府</a></b>');
 
 		resultArea.innerHTML = '<H2>アノテーション結果</H2>'
 			+ textINPUT + '<br><H2>リンク先の表示</H2>'
