@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>アノテーションSample:Ex.1-2</title>
+
+<script>
+window.addEventListener('load', () => {
+	const anotateButton = document.getElementById('anotate');
+	const resultArea = document.getElementById('result_div');
+    var data = 
+    [
+    {"item":"http://www.wikidata.org/entity/Q120730","itemLabel":"京都府"},
+    {"item":"http://www.wikidata.org/entity/Q122723","itemLabel":"大阪府"},
+    {"item":"http://www.wikidata.org/entity/Q130290","itemLabel":"兵庫県"}
+    ];
+
+	anotateButton.addEventListener('click', () => {
+		var textINPUT = document.getElementById('input_text').value;
+
+		for (var i=0;i<data.length;i++){
+			textINPUT = textINPUT.replaceAll(data[i].itemLabel,
+                '<b><a href="'+data[i].item	+'" target="kg">'
+                +data[i].itemLabel+'</a></b>');
+		}	
+
+        resultArea.innerHTML = '<H2>アノテーション結果</H2>'
+			+ textINPUT + '<br><H2>リンク先の表示</H2>'
+			+'<iframe id="kg" name="kg" width=900" height="500"></iframe>;';	
+	}, false);
+}, false);
+</script>
+</head>
+
+<body>
+<h1>アノテーションSample:Ex.1-2</h1>
+<hr>
+<textarea id="input_text" cols="100" rows="5">
+大阪電気通信大学（おおさかでんきつうしんだいがく、英語: Osaka Electro-Communication University）は、大阪府寝屋川市初町18-8に本部を置く日本の私立大学である。1961年に設置された。大学の略称は大阪電通大、阪電通大、大電大、OECU。
+</textarea>
+<br>
+<button id="anotate">アノテーション実行</button>
+<div id="result_div"></div>
+</body>
+
+</html>
