@@ -1,7 +1,10 @@
-リスト１：Ex1-1.htmlを参照
+# サンプルプルグラム
+## リスト１
+Ex1-1.htmlを参照
 
 
-リスト２：JSON形式の配列を用いたアノテーション用データの設定例．
+## リスト２：JSON形式の配列を用いたアノテーション用データの設定例．
+```
 <script>
 window.addEventListener('load', () => {
 const anotateButton = document.getElementById('anotate');
@@ -28,11 +31,14 @@ for (var i=0 ; i < data.length ; i++){
 	}, false);
 }, false);
 </script>
+```
 
-リスト３：SPARQLクエリを用いた検索例（Ex2-1.htmlを参照）．
+## リスト３：SPARQLクエリを用いた検索例
+Ex2-1.htmlを参照
 
 
-リスト４：IDを指定したクエリ生成のための修正箇所１
+## リスト４：IDを指定したクエリ生成のための修正箇所１
+```
 <body>
 <h1>SPARQLサンプル</h1>
 <hr>
@@ -51,12 +57,15 @@ SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 <button id="send">クエリ実行</button>
 <div id="result_div"></div>
 </body>
+```
 
 
-リスト5：URLのパラメータの処理．
-   var param = location.search;
-    if(param!=""){
-        var qid = param.replace("?id=","");
-        document.getElementById('INPUT').value = qid;
-    }
+## リスト5：URLのパラメータの処理．
+ ```
+var param = location.search;
+  if(param!=""){
+      var qid = param.replace("?id=","");
+      document.getElementById('INPUT').value = qid;
+  }
+```
 
