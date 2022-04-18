@@ -34,7 +34,7 @@ for (var i=0 ; i < data.length ; i++){
 ```
 
 ## リスト３：SPARQLクエリを用いた検索例
-Ex2-1.htmlを参照
+[Ex2-1.html](Ex2-1.html)を参照
 
 
 ## リスト４：IDを指定したクエリ生成のための修正箇所１
