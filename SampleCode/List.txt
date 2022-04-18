@@ -2,61 +2,61 @@
 
 
 リスト２：JSON形式の配列を用いたアノテーション用データの設定例．
-1.	<script>
-2.	window.addEventListener('load', () => {
-3.		const anotateButton = document.getElementById('anotate');
-4.		const resultArea = document.getElementById('result_div');
-5.	    var data = 
-6.	    [
-7.	    {"item":"http://www.wikidata.org/entity/Q120730","itemLabel":"京都府"},
-8.	    {"item":"http://www.wikidata.org/entity/Q122723","itemLabel":"大阪府"},
-9.	    {"item":"http://www.wikidata.org/entity/Q130290","itemLabel":"兵庫県"}
-10.	    ];
-11.	
-12.		anotateButton.addEventListener('click', () => {
-13.			var textINPUT = document.getElementById('input_text').value;
-14.	
-15.			for (var i=0 ; i < data.length ; i++){
-16.				textINPUT = textINPUT.replaceAll(data[i].itemLabel,
-17.	                '<b><a href="' + data[i].item + '" target="kg">'
-18.	                + data[i].itemLabel + '</a></b>');
-19.			}	
-20.	
-21.	        resultArea.innerHTML = '<H2>アノテーション結果</H2>'
-22.				+ textINPUT + '<br><H2>リンク先の表示</H2>'
-23.				+'<iframe id="kg" name="kg" width=900" height="500"></iframe>;';	
-24.		}, false);
-25.	}, false);
-26.	</script>
+<script>
+window.addEventListener('load', () => {
+const anotateButton = document.getElementById('anotate');
+const resultArea = document.getElementById('result_div');
+var data = 
+  [
+    {"item":"http://www.wikidata.org/entity/Q120730","itemLabel":"京都府"},
+    {"item":"http://www.wikidata.org/entity/Q122723","itemLabel":"大阪府"},
+    {"item":"http://www.wikidata.org/entity/Q130290","itemLabel":"兵庫県"}
+  ];
+
+anotateButton.addEventListener('click', () => {
+var textINPUT = document.getElementById('input_text').value;
+
+for (var i=0 ; i < data.length ; i++){
+	textINPUT = textINPUT.replaceAll(data[i].itemLabel,
+             '<b><a href="' + data[i].item + '" target="kg">'
+              + data[i].itemLabel + '</a></b>');
+}	
+
+  resultArea.innerHTML = '<H2>アノテーション結果</H2>'
+			+ textINPUT + '<br><H2>リンク先の表示</H2>'
+			+'<iframe id="kg" name="kg" width=900" height="500"></iframe>;';	
+	}, false);
+}, false);
+</script>
 
 リスト３：SPARQLクエリを用いた検索例（Ex2-1.htmlを参照）．
 
 
 リスト４：IDを指定したクエリ生成のための修正箇所１
-1.	<body>
-2.	<h1>SPARQLサンプル</h1>
-3.	<hr>
-4.	ID:<input type="text" id="INPUT" size="20" value="Q122723"></label><br>
-5.	<textarea id="query_area" cols="80" rows="10">
-6.	PREFIX wd: <http://www.wikidata.org/entity/>
-7.	PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-8.	   
-9.	SELECT DISTINCT ?o ?oLabel
-10.	WHERE { 
-11.	wd:#INPUT# wdt:P36 ?o.
-12.	SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
-13.	}
-14.	</textarea>
-15.	<br>
-16.	<button id="send">クエリ実行</button>
-17.	<div id="result_div"></div>
-18.	</body>
+<body>
+<h1>SPARQLサンプル</h1>
+<hr>
+ID:<input type="text" id="INPUT" size="20" value="Q122723"></label><br>
+<textarea id="query_area" cols="80" rows="10">
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+   
+SELECT DISTINCT ?o ?oLabel
+WHERE { 
+wd:#INPUT# wdt:P36 ?o.
+SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
+}
+</textarea>
+<br>
+<button id="send">クエリ実行</button>
+<div id="result_div"></div>
+</body>
 
 
 リスト5：URLのパラメータの処理．
-1.	   var param = location.search;
-2.	    if(param!=""){
-3.	        var qid = param.replace("?id=","");
-4.	        document.getElementById('INPUT').value = qid;
-5.	    }
+   var param = location.search;
+    if(param!=""){
+        var qid = param.replace("?id=","");
+        document.getElementById('INPUT').value = qid;
+    }
 
