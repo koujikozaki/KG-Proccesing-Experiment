@@ -68,4 +68,13 @@ var param = location.search;
       document.getElementById('INPUT').value = qid;
   }
 ```
-
+## リスト６：課題１と２の連携
+```
+for (var i=0 ; i < data.length ; i++){
+	textINPUT = textINPUT.replaceAll(data[i].itemLabel,
+	 '<b><a href="' + 'Ex2-4.html?id='
+         +  data[i].item.replace('http://www.wikidata.org/entity/','')
+         + '" target="kg">'
+	+ data[i].itemLabel + '</a></b>');
+	}	
+```
