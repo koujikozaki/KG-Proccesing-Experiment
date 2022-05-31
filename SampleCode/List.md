@@ -58,7 +58,11 @@ SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 <div id="result_div"></div>
 </body>
 ```
-
+追加の訂正箇所用コード
+```
+var textINPUT = document.getElementById('INPUT').value;
+const query = textArea.value.replace( '#INPUT#', textINPUT );
+```
 
 ## リスト5：URLのパラメータの処理．
  ```
