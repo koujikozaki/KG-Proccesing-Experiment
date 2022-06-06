@@ -54,5 +54,30 @@ select DISTINCT ?s ?sLabel ?o ?oLabel ?o2 ?o2Label
   SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 }
 ```
+## クエリ例５：大阪府の情報を複数まとめて取得する【別クエリ１】．
+```
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
+select DISTINCT ?o ?oLabel 
+{ wd:Q122723 ?p ?o.
+ FILTER(?p=wdt:P36
+       || ?p=wdt:P6 )
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
+}
+```
+## クエリ例６：大阪府の情報を複数まとめて取得する【別クエリ２】．
+```
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+
+select DISTINCT ?o ?oLabel ?prop ?propLabel
+{ wd:Q122723 ?p ?o.
+ FILTER(?p=wdt:P36
+       || ?p=wdt:P6 )
+ ?prop wikibase:directClaim ?p.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
+}
+```
 
