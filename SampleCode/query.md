@@ -59,7 +59,7 @@ select DISTINCT ?s ?sLabel ?o ?oLabel ?o2 ?o2Label
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-select DISTINCT ?p ?pLabel ?o ?oLabel 
+select DISTINCT ?p ?o ?oLabel 
 { wd:Q122723 ?p ?o.
  FILTER(?p=wdt:P36
        || ?p=wdt:P6 )
