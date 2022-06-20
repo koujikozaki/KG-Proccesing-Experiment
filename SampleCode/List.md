@@ -58,7 +58,7 @@ SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 <div id="result_div"></div>
 </body>
 ```
-追加の訂正箇所用コード  
+### 追加の訂正箇所用コード  
 クエリの文字列を取得する部分のコード`const query = textArea.value;`を下記に置き換える．
 ```
 var textINPUT = document.getElementById('INPUT').value;
