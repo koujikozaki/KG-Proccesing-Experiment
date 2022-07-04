@@ -11,7 +11,18 @@ WHERE{
 SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 }
 ```
+## クエリ例１の補足：「分類階層」を含めたSPARQLクエリの例（博物館の一覧）．
+```
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
+SELECT ?item ?itemLabel 
+WHERE{
+?item wdt:P31/wdt:P279* wd:Q33506. 
+SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
+}
+```
+「wdt:P31」の代わりに「wdt:P31/wdt:P279*」を使うと分類階層を含めた一覧が取得できる．
 
 ## クエリ例２：日本の映画監督を取得するクエリ．
 ```
@@ -26,8 +37,17 @@ WHERE{
 SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 }
 ```
+## クエリ例２＋：「分類の種類（例：果物）」の一覧を取得するクエリ．
+```
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 
-
+SELECT ?item ?itemLabel 
+WHERE{
+?item wdt:P279* wd:Q3314483. 
+SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
+}
+```
 ## クエリ例３：大阪府の都道府県の県庁所在地を取得する．
 ```
 PREFIX wd: <http://www.wikidata.org/entity/>
