@@ -90,3 +90,20 @@ for (var i=0 ; i < data.length ; i++){
 	+ data[i].itemLabel + '</a></b>');
 	}	
 ```
+## リスト７：画像表示のサンプル
+```
+function showResult(resultData){
+    const data = resultData.results.bindings;
+    var i=0;
+    var len = data.length;
+    var mesText = "" ;
+    while(i < len){
+        if(data[i]['oLabel']!=null){
+            mesText += '画像:<br><img width="300" src="'+data[i]['oLabel'].value+'"</img><br>';
+        }
+        i++;				
+    }
+    const resultArea = document.getElementById('result_div');
+    resultArea.innerHTML='<h2>クエリ結果（県庁所在地）</h2>'+mesText;
+}
+```
