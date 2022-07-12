@@ -104,6 +104,6 @@ function showResult(resultData){
         i++;				
     }
     const resultArea = document.getElementById('result_div');
-    resultArea.innerHTML='<h2>クエリ結果（県庁所在地）</h2>'+mesText;
+    resultArea.innerHTML='<h2>クエリ結果（画像）</h2>'+mesText;
 }
 ```
