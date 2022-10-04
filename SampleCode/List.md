@@ -73,6 +73,14 @@ var param = location.search;
       document.getElementById('INPUT').value = qid;
   }
 ```
+## 補足：非表示にしたい要素の処理
+HTMLで「非表示」にしたい領域は．
+```
+<div style="display:none" >......</div>
+```
+で囲むとよい．  
+※`style="display:none" `と設定された「タグで囲まれた範囲」は非表示となるので，<div>以外のタグにこの設定を追加することで非表示にすることも可能．
+
 ## リスト６：課題１と２の連携
 課題１のプログラムのリンク先のURLを出力している`data[i].item`の部分を以下のコードで置き換える．
 ```
