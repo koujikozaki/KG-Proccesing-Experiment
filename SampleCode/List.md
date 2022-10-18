@@ -32,6 +32,9 @@ for (var i=0 ; i < data.length ; i++){
 }, false);
 </script>
 ```
+## 「アノテーションに用いるデータ」の外部ファイル化
+外部データを読み込むには、プログラムの冒頭（最初の<script>タグの前）に下記の`<script src="data.js"></script>`ようなコードを追加する。   
+
 
 ## リスト３：SPARQLクエリを用いた検索例
 [Ex2-1.html](Ex2-1.html)を参照
