@@ -118,3 +118,25 @@ function showResult(resultData){
     resultArea.innerHTML='<h2>クエリ結果（画像）</h2>'+mesText;
 }
 ```
+## リス８：クエリ例５の処理をするサンプル
+```
+function showResult(resultData){
+    const data = resultData.results.bindings;
+    var i=0;
+    var len = data.length;
+    var mesText = "" ;
+    while(i < len){
+        if(data[i]['oLabel']!=null){
+            if(data[i]['p'].value.endsWith("P6")){
+                mesText += "首長＝";
+            }else if(data[i]['p'].value.endsWith("P36")){
+                mesText += "県庁所在地＝";
+            }
+            mesText += data[i]['oLabel'].value+'<br>';
+        }
+        i++;				
+    }
+    const resultArea = document.getElementById('result_div');
+    resultArea.innerHTML='<h2>都道府県のデータ/h2>'+mesText;
+}
+```
