@@ -118,7 +118,7 @@ function showResult(resultData){
     resultArea.innerHTML='<h2>クエリ結果（画像）</h2>'+mesText;
 }
 ```
-## リス８：クエリ例５の処理をするサンプル
+## リスト８：クエリ例５の処理をするサンプル
 ```
 function showResult(resultData){
     const data = resultData.results.bindings;
