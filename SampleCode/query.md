@@ -48,6 +48,20 @@ WHERE{
 SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 }
 ```
+## クエリ例１の参考：「都道府県」の一覧を「別名」を含めて取得するクエリ．
+```
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX wd: <http://www.wikidata.org/entity/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?item ?itemLabel 
+WHERE{
+?item wdt:P31 wd:Q50337. 
+?item rdfs:Label|skos:altLabel ?itemLabel.
+FILTER(lang(?itemLabel)="ja")
+}
+```
 ## クエリ例３：大阪府の都道府県の県庁所在地を取得する．
 ```
 PREFIX wd: <http://www.wikidata.org/entity/>
