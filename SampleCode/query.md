@@ -58,7 +58,7 @@ PREFIX wdt: <http://www.wikidata.org/prop/direct/>
 SELECT ?item ?itemLabel 
 WHERE{
 ?item wdt:P31 wd:Q50337. 
-?item rdfs:Label|skos:altLabel ?itemLabel.
+?item rdfs:label|skos:altLabel ?itemLabel.
 FILTER(lang(?itemLabel)="ja")
 }
 ```
