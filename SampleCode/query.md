@@ -37,7 +37,7 @@ WHERE{
 SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 }
 ```
-## クエリ例２＋：「分類の種類（例：果物）」の一覧を取得するクエリ．
+## クエリ例３：「分類の種類（例：果物）」の一覧を取得するクエリ．
 ```
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -62,7 +62,7 @@ WHERE{
 FILTER(lang(?itemLabel)="ja")
 }
 ```
-## クエリ例３：大阪府の都道府県の県庁所在地を取得する．
+## クエリ例４：大阪府の都道府県の県庁所在地を取得する．
 ```
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -71,21 +71,6 @@ SELECT DISTINCT ?o ?oLabel
 WHERE { 
 wd:Q122723 wdt:P36 ?o.
 SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
-}
-```
-
-
-## クエリ例４：大阪府の情報を複数まとめて取得する．
-```
-PREFIX wd: <http://www.wikidata.org/entity/>
-PREFIX wdt: <http://www.wikidata.org/prop/direct/>
-
-select DISTINCT ?s ?sLabel ?o ?oLabel ?o2 ?o2Label
-{ 
-  BIND (wd:Q122723 AS ?s)
-  wd:Q122723 wdt:P36 ?o.
-  wd:Q122723 wdt:P6 ?o2.
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 }
 ```
 ## クエリ例５：大阪府の情報を複数まとめて取得する【別クエリ１】．
