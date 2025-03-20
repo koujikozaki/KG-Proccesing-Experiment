@@ -45,7 +45,7 @@ for (var i=0 ; i < data.length ; i++){
 <body>
 <h1>SPARQLサンプル</h1>
 <hr>
-ID:<input type="text" id="INPUT" size="20" value="Q122723"></label><br>
+ID:<input type="text" id="qid_input" size="20" value="Q122723"></label><br>
 <textarea id="query_area" cols="80" rows="10">
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
@@ -64,8 +64,8 @@ SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 ### 追加の訂正箇所用コード  
 クエリの文字列を取得する部分のコード`const query = textArea.value;`を下記に置き換える．
 ```
-var textINPUT = document.getElementById('INPUT').value;
-const query = textArea.value.replace( '#INPUT#', textINPUT );
+var qidINPUT = document.getElementById('qid_input').value;
+const query = textArea.value.replace( '#INPUT#', qidINPUT );
 ```
 
 ## リスト5：URLのパラメータの処理．
@@ -73,7 +73,7 @@ const query = textArea.value.replace( '#INPUT#', textINPUT );
 var param = location.search;
   if(param!=""){
       var qid = param.replace("?id=","");
-      document.getElementById('INPUT').value = qid;
+      document.getElementById('qid_input').value = qid;
   }
 ```
 ## 補足：非表示にしたい要素の処理
