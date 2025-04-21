@@ -87,7 +87,7 @@ HTMLで「非表示」にしたい領域は．
 ## リスト６：課題１と２の連携
 課題１のプログラムのリンク先のURLを出力している`data[i].item`の部分を以下のコードで置き換える．
 ```
-'Ex2-4.html?id=' + data[i].item.replace('http://www.wikidata.org/entity/','')
+'Ex2-4.html?id=' + data[i].item.replace('http://www.wikidata.org/entity/',"")
 ```
 ※`Ex2-4.html`の部分は「検索結果を表示するプログラム」のファイル名とする．  
   
@@ -96,7 +96,7 @@ HTMLで「非表示」にしたい領域は．
 for (var i=0 ; i < data.length ; i++){
 	textINPUT = textINPUT.replaceAll(data[i].itemLabel,
 	 '<b><a href="' 
-	 + 'Ex2-4.html?id=' + data[i].item.replace('http://www.wikidata.org/entity/','')
+	 + 'Ex2-4.html?id=' + data[i].item.replace('http://www.wikidata.org/entity/',"")
          + '" target="kg">'
 	+ data[i].itemLabel + '</a></b>');
 	}	
