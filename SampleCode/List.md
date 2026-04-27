@@ -4,7 +4,7 @@
 
 
 ## リスト２：JSON形式の配列を用いたアノテーション用データの設定例．
-```
+```JavaScript
 <script>
 window.addEventListener('load', () => {
 const anotateButton = document.getElementById('anotate');
@@ -41,7 +41,7 @@ for (var i=0 ; i < data.length ; i++){
 
 
 ## リスト４：IDを指定したクエリ生成のための修正箇所１
-```
+```JavaScript
 <body>
 <h1>SPARQLサンプル</h1>
 <hr>
@@ -63,13 +63,13 @@ SERVICE wikibase:label { bd:serviceParam wikibase:language "ja,en". }
 ```
 ### 追加の訂正箇所用コード  
 クエリの文字列を取得する部分のコード`const query = textArea.value;`を下記に置き換える．
-```
+```JavaScript
 var qidINPUT = document.getElementById('qid_input').value;
 const query = textArea.value.replace( '#INPUT#', qidINPUT );
 ```
 
 ## リスト5：URLのパラメータの処理．
- ```
+ ```JavaScript
 var param = location.search;
   if(param!=""){
       var qid = param.replace("?id=","");
@@ -78,7 +78,7 @@ var param = location.search;
 ```
 ## 補足：非表示にしたい要素の処理
 HTMLで「非表示」にしたい領域は．
-```
+```JavaScript
 <div style="display:none" >......</div>
 ```
 で囲むとよい．  
@@ -86,13 +86,13 @@ HTMLで「非表示」にしたい領域は．
 
 ## リスト６：課題１と２の連携
 課題１のプログラムのリンク先のURLを出力している`data[i].item`の部分を以下のコードで置き換える．
-```
+```JavaScript
 'Ex2-4.html?id=' + data[i].item.replace('http://www.wikidata.org/entity/',"")
 ```
 ※`Ex2-4.html`の部分は「検索結果を表示するプログラム」のファイル名とする．  
   
 （参考）上記の置き換えを行った後の *アノテーション実行部分* のコードは下記のようになる．
-```
+```JavaScript
 for (var i=0 ; i < data.length ; i++){
 	textINPUT = textINPUT.replaceAll(data[i].itemLabel,
 	 '<b><a href="' 
@@ -102,7 +102,7 @@ for (var i=0 ; i < data.length ; i++){
 	}	
 ```
 ## リスト７：画像表示のサンプル
-```
+```JavaScript
 function showResult(resultData){
     const data = resultData.results.bindings;
     var len = data.length;
@@ -119,7 +119,7 @@ function showResult(resultData){
 }
 ```
 ## リスト８：クエリ例５の処理をするサンプル
-```
+```JavaScript
 function showResult(resultData){
     const data = resultData.results.bindings;
     var len = data.length;
