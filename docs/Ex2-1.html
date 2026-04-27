@@ -33,16 +33,16 @@ window.addEventListener('load', async() => {
 
 function showResult(resultData){
     const data = resultData.results.bindings;
-    var i=0;
     var len = data.length;
     var mesText = "" ;
-    while(i < len){
+    
+    for(var i=0 ; i < len ; i++){
         if(data[i]['oLabel']!=null){
             mesText += data[i]['oLabel'].value+'<br>';
         }
-        i++;				
     }
-    const resultArea = document.getElementById('result_div');
+
+	const resultArea = document.getElementById('result_div');
     resultArea.innerHTML='<h2>クエリ結果</h2>'+mesText;
 }
 /*
