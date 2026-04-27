@@ -45,7 +45,7 @@ for (var i=0 ; i < data.length ; i++){
 <body>
 <h1>SPARQLサンプル</h1>
 <hr>
-ID:<input type="text" id="qid_input" size="20" value="Q122723"></label><br>
+ID:<input type="text" id="qid_input" size="20" value="Q122723"><br>
 <textarea id="query_area" cols="80" rows="10">
 PREFIX wd: <http://www.wikidata.org/entity/>
 PREFIX wdt: <http://www.wikidata.org/prop/direct/>
