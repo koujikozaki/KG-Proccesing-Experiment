@@ -105,15 +105,15 @@ for (var i=0 ; i < data.length ; i++){
 ```
 function showResult(resultData){
     const data = resultData.results.bindings;
-    var i=0;
     var len = data.length;
     var mesText = "" ;
-    while(i < len){
+    
+    for(var i=0 ; i < len ; i++){
         if(data[i]['oLabel']!=null){
             mesText += '画像:<br><img width="300" src="'+data[i]['oLabel'].value+'"</img><br>';
-        }
-        i++;				
+        }		
     }
+
     const resultArea = document.getElementById('result_div');
     resultArea.innerHTML='<h2>クエリ結果（画像）</h2>'+mesText;
 }
@@ -122,10 +122,14 @@ function showResult(resultData){
 ```
 function showResult(resultData){
     const data = resultData.results.bindings;
-    var i=0;
     var len = data.length;
     var mesText = "" ;
-    while(i < len){
+
+    const data = resultData.results.bindings;
+    var len = data.length;
+    var mesText = "" ;
+    
+    for(var i=0 ; i < len ; i++){
         if(data[i]['oLabel']!=null){
             if(data[i]['p'].value.endsWith("P6")){
                 mesText += "首長＝";
@@ -133,9 +137,9 @@ function showResult(resultData){
                 mesText += "県庁所在地＝";
             }
             mesText += data[i]['oLabel'].value+'<br>';
-        }
-        i++;				
+        }		
     }
+    
     const resultArea = document.getElementById('result_div');
     resultArea.innerHTML='<h2>都道府県のデータ/h2>'+mesText;
 }
